@@ -22,7 +22,7 @@ player = st.sidebar.selectbox(
         players,
         0)
 df_player = df_players_totalstats[df_players_totalstats.player==player]
-n_partidos = df_player.shape[0] #partidos jugados por un futbolista
+n_partidos = 1#df_player.shape[0] #partidos jugados por un futbolista
 
 st.title("🚹 MI PLANTEL")
 #--- CONTENIDO INFO BASICA
@@ -57,43 +57,5 @@ with colB3:
 with colC3: pass
 with colE3: pass
 
-colA4, colB4 = st.columns([1,1])
-with colA4: option_stats = st.selectbox("Estadísticas",("Con balón", "Sin balón"))
-with colB4: pass
-
-if option_stats == 'Con balón':
-        metrics_select = metric_off
-        player_metr_sel = df_player[metrics_select]
-        with colD3: heat_map(df_events_player,metrics_select)
-        #player_table1 = {'player':None,
-        #                'Corner':None, 'Despeje':None, 'Duelo defensivo':None, 'Falta cometida':None,
-        #                'Interceptación':None, 'Presión':None, 'Duelo ofensivo':None,'Duelo aereo':None,
-        #                'Recuperacion':None}
-        #st.dataframe(df_player, column_config=player_table1)
-        st.write(player_metr_sel)
-
-elif option_stats == 'Sin balón':
-        metrics_select = metric_def
-        player_metr_sel = df_player[metrics_select]
-        with colD3: heat_map(df_events_player,metrics_select)
-        #player_table2 = {'player':None,
-        #                'Carrera':None, 'Corner':None, 'Falta recibida':None, 'Off-side':None,
-        #                'Pase':None, 'Regate':None, 'Tiro arco':None, 'Tiro desviado':None,
-        #                'Tiro bloqueado':None, 'Tiro libre':None, 'Otras perdidas':None,
-        #                'Duelo ofensivo':None}
-        #st.dataframe(df_player, column_config=player_table2)
-        st.write(player_metr_sel)
-
-######## --------------- MAPA DE PASES
-df_pass_player = df_pass[df_pass.player==player]
-#df_pass_player = df_pass_player[df_pass_player.match_filter==rival]
-player_passmap(df_pass_player,player,'ADEPA')
-
-'''
-metricas = ['PASE','CONDUCCION','REGATE','TIRO','PERDIDA',
-            'PRESION','DUELO',
-            'INTERCEPTACION','DESPEJE', 'RECUPERACION']
-heat_map(df_player, metricas)
-'''
 
 
