@@ -30,13 +30,13 @@ df_players = df.copy()
 
 
 #TEMPORAL: MAX UHLE
-metricas_correct = ['DUELO','INTERCEPTACION','TIRO','DESPEJE','PERDIDA',
+metricas_correct = ['DUELO','INTERCEPTACION','TIRO','PERDIDA',
                     'RECUPERACION','REGATE','DESPEJE']
 
 # ------------------- ANALISIS: EQUIPO ------
 if choice == 'Equipo':
 
-    df = df[metricas_correct]
+    df = df[df['Event'].isin(metricas_correct)]
 
     df = df[df.action_type=='colectivo']
     # Barra lateral
