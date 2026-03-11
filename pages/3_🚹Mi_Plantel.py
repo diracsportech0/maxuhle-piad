@@ -44,7 +44,7 @@ metric_def = ['INTERCEPTACION','DUELO', 'DESPEJE','RECUPERACION',
 #
 colA3, colB3, colC3, colD3, colE3= st.columns([3,3,2,5,1])
 try:
-        with colA3:st.image(f'imgs/{apellido}.jpg', use_column_width=True)
+        with colA3:st.image(f'imgs/{name_player}.jpg', use_column_width=True)
 except:
       with colA3:st.image('imgs/perfil.jfif', use_column_width=True)
 with colB3:
