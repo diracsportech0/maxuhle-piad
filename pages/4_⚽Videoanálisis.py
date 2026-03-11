@@ -103,8 +103,8 @@ if choice == 'Equipo':
             'Progresión riv.':'#FA6019',
             'Recuperación': '#102C9C',
 
-            'Correcto':'#102C9C',
-            'Erroneo':'#AD1D00',
+            'CORRECTO':'#102C9C',
+            'ERRONEO':'#AD1D00',
         },
         title=f'{menu_fases} en {menu_match} <br> ➜', hover_data=['time','Nota']
     )
