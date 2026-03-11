@@ -29,6 +29,7 @@ st.title("🚹 MI PLANTEL")
 matching_row = df_players_excel.loc[df_players_excel['player'] == player]
 name_player = matching_row['name_complete'].values[0]
 apellido = matching_row['surname'].values[0]
+nombre = matching_row['nombre'].values[0]
 
 #born_player = matching_row['born'].values[0].astype('M8[ms]').astype('O').strftime('%Y/%m/%d')
 #min_played = matching_row['min_played'].values[0]
@@ -44,9 +45,9 @@ metric_def = ['INTERCEPTACION','DUELO', 'DESPEJE','RECUPERACION',
 #
 colA3, colB3, colC3, colD3, colE3= st.columns([3,3,2,5,1])
 try:
-        with colA3:st.image(f'imgs/{name_player}.jpg', use_column_width=True)
+        with colA3:st.image(f'imgs/{nombre}.jpg', use_column_width=True)
 except:
-      with colA3:st.image('imgs/perfil.jfif', use_column_width=True)
+        with colA3:st.image('imgs/perfil.jfif', use_column_width=True)
 with colB3:
          st.write('Jugador:', name_player)
          st.write('Posición:', matching_row['position'].values[0])
