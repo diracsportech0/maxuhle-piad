@@ -30,6 +30,7 @@ matching_row = df_players_excel.loc[df_players_excel['player'] == player]
 name_player = matching_row['name_complete'].values[0]
 apellido = matching_row['surname'].values[0]
 nombre = matching_row['nombre'].values[0]
+st.write(nombre)
 
 #born_player = matching_row['born'].values[0].astype('M8[ms]').astype('O').strftime('%Y/%m/%d')
 #min_played = matching_row['min_played'].values[0]
