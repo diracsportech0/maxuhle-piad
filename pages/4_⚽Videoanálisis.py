@@ -48,6 +48,10 @@ if choice == 'Equipo':
         "Partido",
         rivales,
         n_partido)
+    
+##############
+    df = df[df.Rival==menu_match]
+################
     #FASE Y TERCIO
     fases = df.Event.unique()
     fases_list = fases.tolist()
@@ -65,7 +69,7 @@ if choice == 'Equipo':
 
 
     #FILTRADO DE data
-    df = df[df.Rival==menu_match]
+    #df = df[df.Rival==menu_match]
     df = df[df.Event==menu_fases]
     
     #Tipo de fase
