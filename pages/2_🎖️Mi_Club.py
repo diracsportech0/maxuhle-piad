@@ -7,7 +7,7 @@ from mplsoccer import (VerticalPitch, Pitch, create_transparent_cmap,
                        FontManager, arrowhead_marker, Sbopen)
 
 #from Home_page import name_club, id_club
-from etl import df #df_pass #df_tipo1, df_tipo2
+from etl import df, df_pass #df_tipo1, df_tipo2
 from functions import barras_apiladas, tipo_tiros_goles, mostrar_tablas_zonas, mapa_pases
 
 
@@ -72,8 +72,10 @@ if choice2 == 'Informe de partido':
         mostrar_tablas_zonas(df, defensa)
     
     if menu_subinforme == 'Pases':
-        pass
-        
+        st.write('Pases completos')
+        mapa_pases(df_pass,'CORRECTO',menu_match)
+        mapa_pases(df_pass,'ERRONEO',menu_match)
+        st.write('Pases incompletos')
 
 if choice2 == 'Informe acumulado':
     st.write("NO DISPONIBLE")
