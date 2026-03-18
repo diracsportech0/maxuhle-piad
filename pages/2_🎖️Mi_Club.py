@@ -72,10 +72,12 @@ if choice2 == 'Informe de partido':
         mostrar_tablas_zonas(df, defensa)
     
     if menu_subinforme == 'Pases':
-        st.write('Pases completos')
-        mapa_pases(df_pass,'CORRECTO',menu_match)
-        mapa_pases(df_pass,'ERRONEO',menu_match)
-        st.write('Pases incompletos')
+        colA, colB = st.columns(2)
+        st.write('Primer tercio')
+        with colA:
+            mapa_pases(df_pass[df_pass.zone=='1er tercio'],'CORRECTO',menu_match)
+        with colB:
+            mapa_pases(df_pass[df_pass.zone=='1er tercio'],'ERRONEO',menu_match)
 
 if choice2 == 'Informe acumulado':
     st.write("NO DISPONIBLE")
