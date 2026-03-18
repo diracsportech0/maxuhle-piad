@@ -72,12 +72,19 @@ if choice2 == 'Informe de partido':
         mostrar_tablas_zonas(df, defensa)
     
     if menu_subinforme == 'Pases':
+        st.write('PRIMER TERCIO')
         colA, colB = st.columns(2)
-        st.write('Primer tercio')
         with colA:
             mapa_pases(df_pass[df_pass.zone=='1er tercio'],'CORRECTO',menu_match)
         with colB:
             mapa_pases(df_pass[df_pass.zone=='1er tercio'],'ERRONEO',menu_match)
+
+        st.write('TERCIO TERCIO')
+        colC, colD = st.columns(2)
+        with colC:
+            mapa_pases(df_pass[df_pass.zone=='3er tercio'],'CORRECTO',menu_match)
+        with colD:
+            mapa_pases(df_pass[df_pass.zone=='3er tercio'],'ERRONEO',menu_match)
 
 if choice2 == 'Informe acumulado':
     st.write("NO DISPONIBLE")
