@@ -26,7 +26,7 @@ with colZ:st.image('logo-piad.png', use_column_width=True)
 #------------ 1. MENU LATERAL
 menu_analisis = ['Equipo']#,'Jugadores']
 choice = st.sidebar.radio("SUBMENÚ", menu_analisis, 0) #el 0 es el indice de la opcion por defecto
-df_players = df.copy()
+#df_players = df.copy()
 
 
 #TEMPORAL: MAX UHLE
@@ -43,11 +43,13 @@ if choice == 'Equipo':
     # Barra lateral
     #RIVAL
     rivales = df.Rival.unique()
+    st.write(rivales)
     n_partido = len(rivales)-1
     menu_match = st.sidebar.selectbox(
         "Partido",
         rivales,
         n_partido)
+    st.write(n_partido)#-------------------------------------
     #FASE Y TERCIO
     fases = df.Event.unique()
     fases_list = fases.tolist()
