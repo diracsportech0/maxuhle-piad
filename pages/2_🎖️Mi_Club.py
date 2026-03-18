@@ -73,8 +73,8 @@ if choice2 == 'Informe de partido':
     
     if menu_subinforme == 'Pases':
         st.write('Pases completos')
-        #mapa_pases(df_pass,'CORRECTO',menu_match)
-        #mapa_pases(df_pass,'ERRONEO',menu_match)
+        mapa_pases(df_pass,'CORRECTO',menu_match)
+        mapa_pases(df_pass,'ERRONEO',menu_match)
         st.write('Pases incompletos')
 
 if choice2 == 'Informe acumulado':
