@@ -43,13 +43,11 @@ if choice == 'Equipo':
     # Barra lateral
     #RIVAL
     rivales = df.Rival.unique()
-    st.write(rivales)
     n_partido = len(rivales)-1
     menu_match = st.sidebar.selectbox(
         "Partido",
         rivales,
         n_partido)
-    st.write(n_partido)#-------------------------------------
     #FASE Y TERCIO
     fases = df.Event.unique()
     fases_list = fases.tolist()
