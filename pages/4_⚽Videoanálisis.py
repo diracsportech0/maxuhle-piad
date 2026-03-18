@@ -31,7 +31,8 @@ df_players = df.copy()
 
 #TEMPORAL: MAX UHLE
 metricas_correct = ['DUELO','INTERCEPTACION','TIRO','PERDIDA',
-                    'RECUPERACION','REGATE','DESPEJE']
+                    'RECUPERACION','REGATE','DESPEJE',
+                    'ABP a favor', 'Tran. Defensa-Ataque','Tran. Ataque-Defensa']
 
 # ------------------- ANALISIS: EQUIPO ------
 if choice == 'Equipo':
